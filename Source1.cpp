@@ -38,7 +38,7 @@ public:
 					if (cur->idx == id) { cur->data += val; break; }
 
 					else if (cur->idx > id) {
-						link(cur->prv, x); link(x, cur); break;
+						link(cur->prv, x); link(x, cur); len++; break;
 					}
 				}
 			}
@@ -123,11 +123,11 @@ public:
 			else {
 
 				for (SparseArray* cur = Head; cur; cur = cur->next) {
-					if (cur->get_idx() == r) { cur->setvalue(val, c); break; }
+					if (cur->get_idx() == r) { cur->setvalue(val, c);  break; }
 
 
 					if (cur->get_idx() > r) {
-						link(cur->prv, sp); link(sp, cur);
+						link(cur->prv, sp); link(sp, cur); len++;
 						 break;
 					}
 				}
